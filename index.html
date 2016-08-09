@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body ng-app="demoApp">
+
+<div class="container">
+    <div id="container" style="width:200px;height:200px;border:1px solid"></div>
+    <button ng-qnuploader="config" uploader-container="#container">上传</button>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="dist/scripts/angular-qnuploader.min.js"></script>
+
+<script>
+    angular.module('demoApp', [
+        'ng.qnuploader'
+    ]).run(function ($rootScope) {
+        $rootScope.config = {
+            domain: 'http://7xixj1.com1.z0.glb.clouddn.com/',
+            uptokenUrl: 'http://test.maikeji.cn:4000/qiniu/uptoken',
+            maxSize: '1M',
+            mimeTypes: [
+                {title: "Image files", extensions: "jpg,jpeg,gif,png"}
+            ]
+        };
+
+        $rootScope.$on('ng.qnuploader.filesAdded', function (event, args) {
+            console.log(args);
+        });
+
+        $rootScope.$on('ng.qnuploader.error', function (event, args) {
+            console.log(args);
+        });
+
+        $rootScope.$on('ng.qnuploader.beforeUpload', function (event, args) {
+            console.log(args);
+        });
+
+        $rootScope.$on('ng.qnuploader.fileUploaded', function (event, args) {
+            console.log(args);
+        });
+
+        $rootScope.$on('ng.qnuploader.uploadComplete', function (event, args) {
+            console.log(args);
+        });
+    });
+
+</script>
+</body>
+</html>
