@@ -3,7 +3,7 @@
 This project is a angular directive to upload file to Qiniu at browser.
 
 ## Example
-Demo
+[Demo](https://dylike.github.io/angular-qnuploader)
 
 ## Usage
 
