@@ -10,12 +10,7 @@
  */
 angular
     .module('angularQnuploaderApp', [
-        'ngAnimate',
-        'ngCookies',
-        'ngResource',
         'ngRoute',
-        'ngSanitize',
-        'ngTouch',
         'ng.qnuploader'
     ])
     .config(function ($routeProvider) {

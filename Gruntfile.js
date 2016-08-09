@@ -163,7 +163,8 @@ module.exports = function (grunt) {
                     src: [
                         '.tmp',
                         '<%= yeoman.dist %>/{,*/}*',
-                        '!<%= yeoman.dist %>/.git{,*/}*'
+                        '!<%= yeoman.dist %>/.git{,*/}*',
+                        'demo/dist'
                     ]
                 }]
             },
@@ -376,6 +377,7 @@ module.exports = function (grunt) {
         // Copies remaining files to places other tasks can use
         copy: {
             dist: {
+
                 //files: [{
                 //    expand: true,
                 //    dot: true,
@@ -399,6 +401,14 @@ module.exports = function (grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            demo: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.dist %>',
+                    dest: 'demo',
+                    src: '**'
+                }]
             }
         },
 
@@ -468,7 +478,8 @@ module.exports = function (grunt) {
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'copy:demo'
     ]);
 
     grunt.registerTask('default', [
