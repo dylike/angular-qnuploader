@@ -59,7 +59,7 @@ angular.module('ng.qnuploader', [])
                             init: {
 
                                 'FilesAdded': function (up, files) {
-                                    scope.$emit('ng.qnuploader.filesAdded', {
+                                    scope.$emit('ng.qnuploader.taskReady', {
                                         up: up,
                                         files: files
                                     });
@@ -77,7 +77,7 @@ angular.module('ng.qnuploader', [])
                                      * 如超过limit的上限，则抛错
                                      * @暂时不做
                                      */
-                                    scope.$emit('ng.qnuploader.beforeUpload', {
+                                    scope.$emit('ng.qnuploader.fileReady', {
                                         up: up,
                                         file: file
                                     });
@@ -115,7 +115,7 @@ angular.module('ng.qnuploader', [])
                                     var domain = up.getOption('domain');
                                     var res = JSON.parse(info);
                                     var sourceLink = domain + res.key; //获取上传成功后的文件的Url
-                                    scope.$emit('ng.qnuploader.uploaded', {
+                                    scope.$emit('ng.qnuploader.fileUploaded', {
                                         link: sourceLink,
                                         res: res,
                                         file: file
@@ -140,7 +140,7 @@ angular.module('ng.qnuploader', [])
 
                                 'UploadComplete': function (up, files) {
                                     //队列文件处理完毕后,处理相关的事情
-                                    scope.$emit('ng.qnuploader.uploadComplete', {
+                                    scope.$emit('ng.qnuploader.taskComplete', {
                                         up: up,
                                         files: files
                                     });

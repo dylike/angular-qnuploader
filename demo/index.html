@@ -30,23 +30,23 @@
             ]
         };
 
-        $rootScope.$on('ng.qnuploader.filesAdded', function (event, args) {
-            console.log(args);
-        });
-
         $rootScope.$on('ng.qnuploader.error', function (event, args) {
             console.log(args);
         });
 
-        $rootScope.$on('ng.qnuploader.beforeUpload', function (event, args) {
+        $rootScope.$on('ng.qnuploader.taskReady', function (event, args) {
             console.log(args);
         });
 
-        $rootScope.$on('ng.qnuploader.fileUploaded', function (event, args) {
+        $rootScope.$on('ng.qnuploader.taskComplete', function (event, args) {
             console.log(args);
         });
 
-        $rootScope.$on('ng.qnuploader.uploadComplete', function (event, args) {
+        $rootScope.$on('ng.qnuploader.fileReady', function (event, args) {
+            console.log(args);
+        });
+
+        $rootScope.$on('ng.qnuploader.fileComplete', function (event, args) {
             console.log(args);
         });
     });

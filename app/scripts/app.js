@@ -34,7 +34,7 @@ angular
             ]
         };
 
-        $scope.$on('ng.qnuploader.filesAdded', function (event, args) {
+        $scope.$on('ng.qnuploader.taskReady', function (event, args) {
             console.log(args);
         });
 
@@ -42,15 +42,15 @@ angular
             console.log(args);
         });
 
-        $scope.$on('ng.qnuploader.beforeUpload', function (event, args) {
+        $scope.$on('ng.qnuploader.fileReady', function (event, args) {
             console.log(args);
         });
 
-        $scope.$on('ng.qnuploader.fileUploaded', function (event, args) {
+        $scope.$on('ng.qnuploader.fileComplete', function (event, args) {
             console.log(args);
         });
 
-        $scope.$on('ng.qnuploader.uploadComplete', function (event, args) {
+        $scope.$on('ng.qnuploader.taskComplete', function (event, args) {
             console.log(args);
         });
     });
