@@ -20,12 +20,12 @@ when upload task is complete, will trick ng.qnuploader.uploadComplete event.
 - up:
 - files:
 
-### ng.qnuploader.beforeUpload
+### ng.qnuploader.fileReady
 one file in a upload task is ready to upload.
 - up:
 - file:
 
-### ng.qnuploader.fileUploaded
+### ng.qnuploader.fileComplete
 one file in a upload task is uploaded.
 - file:
 - res:
