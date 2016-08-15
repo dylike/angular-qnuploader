@@ -115,7 +115,7 @@ angular.module('ng.qnuploader', [])
                                     var domain = up.getOption('domain');
                                     var res = JSON.parse(info);
                                     var sourceLink = domain + res.key; //获取上传成功后的文件的Url
-                                    scope.$emit('ng.qnuploader.fileUploaded', {
+                                    scope.$emit('ng.qnuploader.fileComplete', {
                                         link: sourceLink,
                                         res: res,
                                         file: file
